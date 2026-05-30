@@ -1,0 +1,24 @@
+{
+  "name": "ext-stack",
+  "version": "1.0.0",
+  "private": true,
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.2",
+  "scripts": {
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.15",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5",
+    "typescript": "^6.0.3",
+    "ultracite": "7.8.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+      "pnpm fix --"
+    ]
+  }
+}
