@@ -6,6 +6,7 @@
   "scripts": {
     "check": "ultracite check",
     "fix": "ultracite fix",
+    "typecheck": "pnpm -r --if-present typecheck",
     "prepare": "husky"
   },
   "devDependencies": {
