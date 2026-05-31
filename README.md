@@ -32,6 +32,7 @@ apps/
   worker
 
 packages/
+  ui
   auth
   billing
   ai
@@ -45,6 +46,7 @@ packages/
 - Monorepo: pnpm workspace + Turborepo
 - Web app: Vite + React + TanStack Router + TanStack Query
 - Browser extension: WXT + React + TanStack Query
+- UI: Tailwindcss + shadcn
 - API: Hono + Hono RPC on Cloudflare Workers
 - Database: PostgreSQL + Drizzle ORM
 - Authentication: Better Auth
