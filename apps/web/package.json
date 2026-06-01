@@ -2,6 +2,7 @@
   "name": "@ext-stack/web",
   "version": "1.0.0",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -9,6 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@ext-stack/api": "workspace:*",
     "@ext-stack/ui": "workspace:*",
     "lucide-react": "^1.17.0",
     "react": "^19.2.6",

@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "types": ["@cloudflare/workers-types"],
+    "jsxImportSource": "hono/jsx"
+  }
+}
