@@ -29,10 +29,11 @@ AI Extension SaaS Kit is built specifically for **extension-first products**.
 apps/
   web
   extension
-  worker
+  server
 
 packages/
   ui
+  api
   auth
   billing
   ai
