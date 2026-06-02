@@ -7,7 +7,10 @@ const app = new Hono<AppEnv>();
 app.use(
   "*",
   cors({
-    origin: (_origin, c) => (c as AppContext).env.WEB_BASE_URL,
+    origin: (origin, c) => {
+      const allowedOrigin = (c as AppContext).env.WEB_BASE_URL;
+      return origin === allowedOrigin ? origin : null;
+    },
     allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
   })

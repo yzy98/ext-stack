@@ -19,9 +19,50 @@ Existing solutions are usually either:
 - SaaS boilerplates (web-first)
 - Extension boilerplates (extension-only)
 
-AI Extension SaaS Kit is built specifically for **extension-first products**.
+ExtStack is built specifically for **extension-first products**.
 
-## Features
+## Current Status
+
+Implemented:
+
+- apps/web: Vite + React + TanStack Router + TanStack Query
+- apps/server: Hono on Cloudflare Workers
+- packages/ui: shared shadcn UI package
+- packages/api: Hono RPC client package
+- Tooling: pnpm workspace, Turborepo, TypeScript, Ultracite, and Biome
+
+Planned:
+
+- apps/extension: WXT + React
+- packages/db: Drizzle ORM + PostgreSQL
+- packages/auth: Better Auth
+- packages/billing: Stripe Billing
+- packages/ai: AI provider integrations and usage tracking
+
+## Local Development
+
+Copy the local environment examples:
+
+```bash
+cp apps/web/.env.example apps/web/.env
+cp apps/server/.dev.vars.example apps/server/.dev.vars
+```
+
+Start the development servers:
+
+```bash
+pnpm dev
+```
+
+Run checks before committing:
+
+```bash
+pnpm check
+pnpm typecheck
+pnpm build
+```
+
+## Architecture
 
 ### Monorepo Architecture
 
@@ -54,6 +95,8 @@ packages/
 - Billing: Stripe Billing
 - Shared packages: TypeScript types, API clients, schemas, and UI primitives
 - Code quality: TypeScript + Ultracite + Biome
+
+## Roadmap
 
 ### Authentication
 
