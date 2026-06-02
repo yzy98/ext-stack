@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "hono": "^4.12.23"
+    "hono": "catalog:"
   },
   "devDependencies": {
     "@ext-stack/server": "workspace:*"

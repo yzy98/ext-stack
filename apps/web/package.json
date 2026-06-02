@@ -12,21 +12,20 @@
   "dependencies": {
     "@ext-stack/api": "workspace:*",
     "@ext-stack/ui": "workspace:*",
-    "@tanstack/react-query": "^5.100.14",
+    "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "^1.170.10",
-    "lucide-react": "^1.17.0",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "lucide-react": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.3.0",
+    "@tailwindcss/vite": "catalog:",
     "@tanstack/react-router-devtools": "^1.167.0",
     "@tanstack/router-plugin": "^1.168.13",
     "@types/node": "^24.12.3",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "^6.0.1",
-    "typescript": "~6.0.2",
     "vite": "^8.0.12"
   }
 }
