@@ -27,13 +27,13 @@ Implemented:
 
 - apps/web: Vite + React + TanStack Router + TanStack Query
 - apps/server: Hono on Cloudflare Workers
+- apps/extension: WXT + React + TanStack Query
 - packages/ui: shared shadcn UI package
 - packages/api: Hono RPC client package
 - Tooling: pnpm workspace, Turborepo, TypeScript, Ultracite, and Biome
 
 Planned:
 
-- apps/extension: WXT + React
 - packages/db: Drizzle ORM + PostgreSQL
 - packages/auth: Better Auth
 - packages/billing: Stripe Billing
@@ -46,6 +46,7 @@ Copy the local environment examples:
 ```bash
 cp apps/web/.env.example apps/web/.env
 cp apps/server/.dev.vars.example apps/server/.dev.vars
+cp apps/extension/.env.example apps/extension/.env
 ```
 
 Start the development servers:
