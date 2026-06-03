@@ -1,3 +1,5 @@
+import { createDb } from "@ext-stack/db";
+import { usersTable } from "@ext-stack/db/schema";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import type { AppContext, AppEnv } from "./types";
@@ -16,12 +18,18 @@ app.use(
   })
 );
 
-const routes = app.get("/health", (c) =>
-  c.json({
-    ok: true,
-    service: "server",
-  })
-);
+const routes = app
+  .get("/health", (c) =>
+    c.json({
+      ok: true,
+      service: "server",
+    })
+  )
+  .get("/health/db", async (c) => {
+    const db = createDb(c.env.DB);
+    const result = await db.select().from(usersTable);
+    return c.json(result);
+  });
 
 export default app;
 

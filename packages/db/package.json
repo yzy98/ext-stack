@@ -1,0 +1,29 @@
+{
+  "name": "@ext-stack/db",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "pnpm --filter @ext-stack/server db:migrate:local",
+    "db:migrate:remote": "drizzle-kit migrate",
+    "db:studio:local": "LOCAL_D1_DB_PATH=$(find ../../apps/server/.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' ! -name 'metadata.sqlite' -print | head -n 1) drizzle-kit studio --config=drizzle-dev.config.ts",
+    "db:studio:remote": "drizzle-kit studio",
+    "db:push:remote": "drizzle-kit push",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "catalog:",
+    "@libsql/client": "^0.17.3",
+    "@types/node": "catalog:",
+    "dotenv": "^17.4.2",
+    "drizzle-kit": "^0.31.10"
+  }
+}
