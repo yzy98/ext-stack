@@ -5,37 +5,13 @@
   "compatibility_date": "2026-06-01",
   "vars": {
     "WEB_BASE_URL": "http://localhost:5173"
-  }
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
-  // "vars": {
-  //   "MY_VAR": "my-variable"
-  // },
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "MY_KV_NAMESPACE",
-  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  //   }
-  // ],
-  // "r2_buckets": [
-  //   {
-  //     "binding": "MY_BUCKET",
-  //     "bucket_name": "my-bucket"
-  //   }
-  // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
-  // "ai": {
-  //   "binding": "AI"
-  // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ext-stack-db",
+      "database_id": "76782f47-72ab-4b2d-83e5-e5e3c02c13dc",
+      "migrations_dir": "drizzle/migrations"
+    }
+  ]
 }
