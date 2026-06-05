@@ -2,7 +2,7 @@ import { buttonVariants } from "@ext-stack/ui/components/button";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bot, Boxes, Gauge, ShieldCheck } from "lucide-react";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_app/")({
   component: HomePage,
 });
 

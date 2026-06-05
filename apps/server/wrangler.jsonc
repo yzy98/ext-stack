@@ -14,5 +14,6 @@
       "database_id": "76782f47-72ab-4b2d-83e5-e5e3c02c13dc",
       "migrations_dir": "drizzle/migrations"
     }
-  ]
+  ],
+  "compatibility_flags": ["nodejs_compat"]
 }

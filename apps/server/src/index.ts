@@ -16,12 +16,19 @@ app.on(["POST", "GET"], "/api/auth/*", (c) => {
   return auth.handler(c.req.raw);
 });
 
-const routes = app.get("/health", (c) =>
-  c.json({
-    ok: true,
-    service: "server",
-  })
-);
+const routes = app
+  .get("/health", (c) =>
+    c.json({
+      ok: true,
+      service: "server",
+    })
+  )
+  .get("/session", (c) =>
+    c.json({
+      user: c.get("user"),
+      session: c.get("session"),
+    })
+  );
 
 export default app;
 

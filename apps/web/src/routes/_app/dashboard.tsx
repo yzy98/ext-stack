@@ -1,7 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { ServerHealth } from "@/components/server-health";
+import { authClient } from "@/lib/auth-client";
 
-export const Route = createFileRoute("/dashboard")({
+export const Route = createFileRoute("/_app/dashboard")({
+  beforeLoad: async () => {
+    const { data: session } = await authClient.getSession();
+    if (!session) {
+      throw redirect({
+        to: "/sign-in",
+      });
+    }
+  },
   component: DashboardPage,
 });
 

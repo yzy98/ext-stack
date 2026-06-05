@@ -11,12 +11,15 @@
   },
   "dependencies": {
     "@ext-stack/api": "workspace:*",
+    "@ext-stack/auth": "workspace:*",
     "@ext-stack/ui": "workspace:*",
+    "@tanstack/react-form": "^1.33.0",
     "@tanstack/react-query": "catalog:",
     "@tanstack/react-router": "^1.170.10",
     "lucide-react": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "catalog:",
