@@ -6,15 +6,36 @@ settings:
 
 catalogs:
   default:
+    '@cloudflare/workers-types':
+      specifier: ^4.20260601.1
+      version: 4.20260601.1
+    '@tailwindcss/vite':
+      specifier: ^4.3.0
+      version: 4.3.0
+    '@tanstack/react-query':
+      specifier: ^5.100.14
+      version: 5.100.14
+    '@types/node':
+      specifier: ^24.12.4
+      version: 24.12.4
     '@types/react':
       specifier: ^19.2.15
       version: 19.2.15
     '@types/react-dom':
       specifier: ^19.2.3
       version: 19.2.3
+    hono:
+      specifier: ^4.12.23
+      version: 4.12.23
     lucide-react:
       specifier: ^1.17.0
       version: 1.17.0
+    react:
+      specifier: ^19.2.6
+      version: 19.2.6
+    react-dom:
+      specifier: ^19.2.6
+      version: 19.2.6
 
 overrides:
   kysely: 0.28.17
@@ -47,6 +68,9 @@ importers:
       '@ext-stack/api':
         specifier: workspace:*
         version: link:../../packages/api
+      '@ext-stack/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
       '@ext-stack/ui':
         specifier: workspace:*
         version: link:../../packages/ui

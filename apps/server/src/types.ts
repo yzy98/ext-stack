@@ -12,6 +12,7 @@ export interface AppEnv {
 export interface Bindings {
   API_BASE_URL: string;
   BETTER_AUTH_SECRET: string;
+  CHROME_EXTENSION_ID: string;
   DB: D1Database;
   WEB_BASE_URL: string;
 }

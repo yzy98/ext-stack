@@ -5,7 +5,8 @@
   "compatibility_date": "2026-06-01",
   "vars": {
     "WEB_BASE_URL": "http://localhost:5173",
-    "API_BASE_URL": "http://localhost:8787"
+    "API_BASE_URL": "http://localhost:8787",
+    "CHROME_EXTENSION_ID": "chrome-extension://komdkgpikgfhfjpiniepkbmananpagjp"
   },
   "d1_databases": [
     {

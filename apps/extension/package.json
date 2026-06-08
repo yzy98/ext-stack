@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@ext-stack/api": "workspace:*",
+    "@ext-stack/auth": "workspace:*",
     "@ext-stack/ui": "workspace:*",
     "@tanstack/react-query": "catalog:",
     "lucide-react": "catalog:",
