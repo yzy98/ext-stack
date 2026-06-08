@@ -7,6 +7,7 @@ import * as schema from "./schema";
 export function createDb(database: D1Database) {
   return drizzle(database, {
     schema,
+    casing: "snake_case",
   });
 }
 

@@ -1,22 +1,20 @@
-import { createDb } from "@ext-stack/db";
-import { usersTable } from "@ext-stack/db/schema";
 import { Hono } from "hono";
-import { cors } from "hono/cors";
-import type { AppContext, AppEnv } from "./types";
+import { getAuth } from "./lib/auth";
+import { corsMiddleware } from "./middleware/cors-middleware";
+import { sessionMiddleware } from "./middleware/session-middleware";
+import type { AppEnv } from "./types";
 
 const app = new Hono<AppEnv>();
 
-app.use(
-  "*",
-  cors({
-    origin: (origin, c) => {
-      const allowedOrigin = (c as AppContext).env.WEB_BASE_URL;
-      return origin === allowedOrigin ? origin : null;
-    },
-    allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowHeaders: ["Content-Type", "Authorization"],
-  })
-);
+// Middlewares
+app.use("*", corsMiddleware);
+app.use("*", sessionMiddleware);
+
+// Auth route
+app.on(["POST", "GET"], "/api/auth/*", (c) => {
+  const auth = getAuth(c);
+  return auth.handler(c.req.raw);
+});
 
 const routes = app
   .get("/health", (c) =>
@@ -25,11 +23,12 @@ const routes = app
       service: "server",
     })
   )
-  .get("/health/db", async (c) => {
-    const db = createDb(c.env.DB);
-    const result = await db.select().from(usersTable);
-    return c.json(result);
-  });
+  .get("/session", (c) =>
+    c.json({
+      user: c.get("user"),
+      session: c.get("session"),
+    })
+  );
 
 export default app;
 

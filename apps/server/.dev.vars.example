@@ -1,1 +1,5 @@
 WEB_BASE_URL=http://localhost:5173
+API_BASE_URL=http://localhost:8787
+CHROME_EXTENSION_ID=chrome-extension://YOUR_EXTENSION_ID
+
+BETTER_AUTH_SECRET=

@@ -1,3 +1,4 @@
+import { AuthStatus } from "@/components/auth-status";
 import { ModeToggle } from "@/components/mode-toggle";
 import { ServerHealth } from "@/components/server-health";
 
@@ -12,6 +13,7 @@ function App() {
       </div>
 
       <ServerHealth />
+      <AuthStatus />
       <ModeToggle />
     </main>
   );

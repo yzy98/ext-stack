@@ -9,6 +9,7 @@ if (!localD1Path) {
 export default defineConfig({
   schema: "./src/schema.ts",
   dialect: "sqlite",
+  casing: "snake_case",
   dbCredentials: {
     url: `file:${localD1Path}`,
   },

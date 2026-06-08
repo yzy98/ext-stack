@@ -14,6 +14,7 @@ export default defineConfig({
   schema: "./src/schema.ts",
   dialect: "sqlite",
   driver: "d1-http",
+  casing: "snake_case",
   dbCredentials: {
     accountId,
     databaseId,

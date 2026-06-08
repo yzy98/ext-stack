@@ -30,12 +30,12 @@ Implemented:
 - apps/extension: WXT + React + TanStack Query
 - packages/ui: shared shadcn UI package
 - packages/api: Hono RPC client package
+- packages/db: Drizzle ORM + PostgreSQL
+- packages/auth: Better Auth
 - Tooling: pnpm workspace, Turborepo, TypeScript, Ultracite, and Biome
 
 Planned:
 
-- packages/db: Drizzle ORM + PostgreSQL
-- packages/auth: Better Auth
 - packages/billing: Stripe Billing
 - packages/ai: AI provider integrations and usage tracking
 

@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@ext-stack/auth": "workspace:*",
     "@ext-stack/db": "workspace:*",
     "hono": "catalog:"
   },

@@ -1,0 +1,17 @@
+{
+  "name": "@ext-stack/auth",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ext-stack/db": "workspace:*",
+    "better-auth": "^1.6.14"
+  }
+}

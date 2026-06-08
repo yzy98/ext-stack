@@ -19,6 +19,11 @@
     "typescript": "^6.0.3",
     "ultracite": "7.8.0"
   },
+  "pnpm": {
+    "overrides": {
+      "kysely": "0.28.17"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
       "pnpm fix --"
