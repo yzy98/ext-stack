@@ -6,12 +6,6 @@ export const sessionMiddleware: MiddlewareHandler<AppEnv> = async (
   c: AppContext,
   next: Next
 ) => {
-  // Skip auth routes
-  if (c.req.path.startsWith("/api/auth/")) {
-    await next();
-    return;
-  }
-
   const auth = getAuth(c);
   const session = await auth.api.getSession({
     headers: c.req.raw.headers,

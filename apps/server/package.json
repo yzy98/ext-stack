@@ -18,7 +18,9 @@
   "dependencies": {
     "@ext-stack/auth": "workspace:*",
     "@ext-stack/db": "workspace:*",
-    "hono": "catalog:"
+    "@hono/zod-validator": "^0.8.0",
+    "hono": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "catalog:",

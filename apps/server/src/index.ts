@@ -2,13 +2,15 @@ import { Hono } from "hono";
 import { getAuth } from "./lib/auth";
 import { corsMiddleware } from "./middleware/cors-middleware";
 import { sessionMiddleware } from "./middleware/session-middleware";
+import health from "./routes/health";
+import setting from "./routes/setting";
 import type { AppEnv } from "./types";
 
 const app = new Hono<AppEnv>();
 
 // Middlewares
 app.use("*", corsMiddleware);
-app.use("*", sessionMiddleware);
+app.use("/setting/*", sessionMiddleware);
 
 // Auth route
 app.on(["POST", "GET"], "/api/auth/*", (c) => {
@@ -16,19 +18,7 @@ app.on(["POST", "GET"], "/api/auth/*", (c) => {
   return auth.handler(c.req.raw);
 });
 
-const routes = app
-  .get("/health", (c) =>
-    c.json({
-      ok: true,
-      service: "server",
-    })
-  )
-  .get("/session", (c) =>
-    c.json({
-      user: c.get("user"),
-      session: c.get("session"),
-    })
-  );
+const routes = app.route("/health", health).route("/setting", setting);
 
 export default app;
 

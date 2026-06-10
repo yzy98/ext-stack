@@ -12,4 +12,5 @@ export function createDb(database: D1Database) {
 }
 
 export type Db = ReturnType<typeof createDb>;
+export * from "./helper";
 export * from "./schema";
