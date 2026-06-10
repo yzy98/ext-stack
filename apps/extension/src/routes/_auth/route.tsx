@@ -1,11 +1,5 @@
-import { buttonVariants } from "@ext-stack/ui/components/button";
-import {
-  createFileRoute,
-  Link,
-  Outlet,
-  redirect,
-} from "@tanstack/react-router";
-import { ChevronLeftIcon } from "lucide-react";
+import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
+import { BackButton } from "@/components/back-button";
 import { authClient } from "@/lib/auth-client";
 
 export const Route = createFileRoute("/_auth")({
@@ -23,17 +17,7 @@ export const Route = createFileRoute("/_auth")({
 function AuthLayout() {
   return (
     <div className="relative flex min-h-0 flex-1 items-center justify-center">
-      <Link
-        className={buttonVariants({
-          className: "absolute top-0 left-0",
-          size: "icon",
-          variant: "ghost",
-        })}
-        to="/"
-      >
-        <ChevronLeftIcon />
-        <span className="sr-only">Back to home</span>
-      </Link>
+      <BackButton className="absolute top-0 left-0" />
       <Outlet />
     </div>
   );
