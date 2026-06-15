@@ -38,6 +38,7 @@ Planned:
 
 - packages/billing: Stripe Billing
 - packages/ai: AI provider integrations and usage tracking
+- RAG infrastructure for page-aware and user-memory browser extensions
 
 ## Local Development
 
@@ -123,6 +124,76 @@ packages/
 - Token tracking
 - Rate limiting
 - User quotas
+- RAG ingestion and retrieval
+- Embeddings and vector search
+- Per-user memory stores
+- Source attribution
+
+### RAG Use Cases
+
+ExtStack is a natural foundation for RAG-powered browser extension products because
+the extension can capture useful page context while the backend handles auth,
+storage, retrieval, billing, quotas, and AI provider access.
+
+Possible RAG product directions:
+
+- Current page assistant: summarize, explain, rewrite, or answer questions about
+  the page the user is viewing.
+- Selected text assistant: run AI actions against highlighted content from any
+  website.
+- Personal web memory: let users save pages, snippets, PDFs, emails, or research
+  notes, then ask questions across their saved knowledge.
+- Research assistant: collect sources while browsing and generate answers with
+  citations back to saved pages.
+- Team knowledge copilot: combine browser context with shared company docs,
+  bookmarks, SOPs, CRM notes, or support knowledge.
+- Vertical copilots: build Gmail, YouTube, LinkedIn, GitHub, Twitter/X, or
+  documentation assistants that retrieve from both the active page and stored
+  user knowledge.
+
+Suggested RAG architecture:
+
+```txt
+apps/extension
+  content scripts: extract page content, selected text, metadata
+  popup UI: ask current page, save to memory, search saved sources
+
+apps/server
+  /rag/ingest
+  /rag/query
+  /rag/sources
+  /ai/chat
+
+packages/ai
+  embeddings
+  retrieval
+  answer generation
+  usage tracking
+  provider adapters
+
+packages/db
+  ragSource
+  ragChunk
+  ragQuery
+  usageEvent
+```
+
+Vector storage options:
+
+- Cloudflare Vectorize for a Cloudflare-native deployment.
+- PostgreSQL with pgvector when the app already depends on Postgres.
+- External vector databases such as Qdrant, Pinecone, or Supabase Vector for
+  faster experimentation.
+
+Recommended MVP:
+
+- Ask this page: extract the current page, retrieve relevant chunks, and answer
+  with source snippets.
+- Save to memory: let authenticated users save pages or selections into a
+  personal knowledge base.
+- Query my memory: search across saved sources and generate grounded answers.
+- Track usage: count tokens, embeddings, retrieval calls, and AI requests against
+  user quotas.
 
 ### Browser Extension
 
